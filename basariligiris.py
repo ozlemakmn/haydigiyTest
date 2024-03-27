@@ -29,7 +29,7 @@ class Login:
        actions.send_keys_to_element(usernameInput,username )
        actions.send_keys_to_element(passwordInput, password)
        actions.perform()  #ilgili aksiyonları çalıştır.
-       sleep(2)
+   
        singIn = WebDriverWait(self.driver,5).until(EC.visibility_of_element_located((By.XPATH,"/html/body/main/div/div[1]/form/div[3]/button")))
        singIn.click()
        Logo_button=WebDriverWait(self.driver,5).until(EC.visibility_of_element_located((By.XPATH,"/html/body/div[1]/div[2]/div/div[2]/a/img")))
@@ -37,10 +37,10 @@ class Login:
        WebDriverWait(self.driver,5).until(EC.visibility_of_element_located((By.NAME,"q")))
        searchInput=self.driver.find_element(By.NAME,"q")
        searchInput.send_keys("çanta", Keys.ENTER)
-       sleep(2)
+    
        firstclass=WebDriverWait(self.driver,5).until(EC.visibility_of_element_located((By.XPATH,"/html/body/div[2]/div[2]/div[2]/div[2]/div[1]")))
        firstclass.click()
-       sleep(2)
+    
        basket=WebDriverWait(self.driver,5).until(EC.visibility_of_element_located((By.ID,"add-to-cart-button-99242")))
        basket.click()
        message= WebDriverWait(self.driver,5).until(EC.visibility_of_element_located((By.XPATH,"/html/body/div[14]/div/div")))
