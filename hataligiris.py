@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
-from time import sleep
+
  
 
 class Login:
@@ -27,8 +27,8 @@ class Login:
        actions = ActionChains(self.driver)
        actions.send_keys_to_element(usernameInput, username)
        actions.send_keys_to_element(passwordInput, password)
-       actions.perform()  #ilgili aksiyonları çalıştır.
-       sleep(5)
+       actions.perform()  
+
        singIn = WebDriverWait(self.driver,5).until(EC.visibility_of_element_located((By.XPATH,"/html/body/main/div/div[1]/form/div[3]/button")))
        singIn.click()
        errorMessage= WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.XPATH, "/html/body/main/div/div[1]/form/div[1]")))
